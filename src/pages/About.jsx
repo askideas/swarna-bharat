@@ -1,4 +1,5 @@
 import './About.css'
+import { TrendingUp, Target, Eye, Star, Handshake, Lightbulb, Heart } from 'lucide-react'
 
 const About = () => {
   return (
@@ -34,7 +35,7 @@ const About = () => {
             </div>
             <div className="image-content slide-in-right">
               <div className="about-image">
-                <div className="image-placeholder">📈</div>
+                <div className="image-placeholder"><TrendingUp size={80} /></div>
                 <p>Growing Together</p>
               </div>
             </div>
@@ -47,7 +48,7 @@ const About = () => {
         <div className="container">
           <div className="mv-grid">
             <div className="mv-card fade-in">
-              <div className="mv-icon">🎯</div>
+              <div className="mv-icon"><Target size={64} /></div>
               <h3>Our Mission</h3>
               <p>
                 To serve our community with excellence, integrity, and innovation while building 
@@ -56,7 +57,7 @@ const About = () => {
               </p>
             </div>
             <div className="mv-card fade-in">
-              <div className="mv-icon">👁️</div>
+              <div className="mv-icon"><Eye size={64} /></div>
               <h3>Our Vision</h3>
               <p>
                 To be the most trusted and respected organization in our community, known for 
@@ -77,22 +78,22 @@ const About = () => {
           </div>
           <div className="values-grid">
             <div className="value-card fade-in">
-              <div className="value-icon">⭐</div>
+              <div className="value-icon"><Star size={40} /></div>
               <h4>Excellence</h4>
               <p>We strive for the highest standards in all our endeavors</p>
             </div>
             <div className="value-card fade-in">
-              <div className="value-icon">🤝</div>
+              <div className="value-icon"><Handshake size={40} /></div>
               <h4>Integrity</h4>
               <p>Honesty and transparency guide our actions and decisions</p>
             </div>
             <div className="value-card fade-in">
-              <div className="value-icon">💡</div>
+              <div className="value-icon"><Lightbulb size={40} /></div>
               <h4>Innovation</h4>
               <p>We embrace creativity and forward-thinking solutions</p>
             </div>
             <div className="value-card fade-in">
-              <div className="value-icon">❤️</div>
+              <div className="value-icon"><Heart size={40} /></div>
               <h4>Compassion</h4>
               <p>Empathy and care are at the heart of our service</p>
             </div>

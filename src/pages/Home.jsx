@@ -1,4 +1,5 @@
 import './Home.css'
+import { Star, Handshake, Lightbulb, Target } from 'lucide-react'
 
 const Home = () => {
   return (
@@ -51,22 +52,22 @@ const Home = () => {
           </div>
           <div className="features-grid">
             <div className="feature-card fade-in">
-              <div className="feature-icon">🌟</div>
+              <div className="feature-icon"><Star size={48} /></div>
               <h3>Excellence</h3>
               <p>We maintain the highest standards in everything we do, ensuring quality and reliability in all our services.</p>
             </div>
             <div className="feature-card fade-in">
-              <div className="feature-icon">🤝</div>
+              <div className="feature-icon"><Handshake size={48} /></div>
               <h3>Trust</h3>
               <p>Built on a foundation of trust and transparency, we foster long-lasting relationships with our community.</p>
             </div>
             <div className="feature-card fade-in">
-              <div className="feature-icon">💡</div>
+              <div className="feature-icon"><Lightbulb size={48} /></div>
               <h3>Innovation</h3>
               <p>We embrace innovative solutions and modern approaches to address contemporary challenges effectively.</p>
             </div>
             <div className="feature-card fade-in">
-              <div className="feature-icon">🎯</div>
+              <div className="feature-icon"><Target size={48} /></div>
               <h3>Impact</h3>
               <p>Our initiatives create meaningful, lasting impact in the communities we serve across various sectors.</p>
             </div>

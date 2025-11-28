@@ -1,4 +1,5 @@
 import './Footer.css'
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -43,15 +44,15 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Contact Info</h4>
             <div className="contact-info">
-              <p><i className="icon">📍</i> 123 Trust Avenue, City, State 12345</p>
-              <p><i className="icon">📞</i> +1 (555) 123-4567</p>
-              <p><i className="icon">✉️</i> info@swaranbharattrust.org</p>
+              <p><MapPin className="icon" size={18} /> 123 Trust Avenue, City, State 12345</p>
+              <p><Phone className="icon" size={18} /> +1 (555) 123-4567</p>
+              <p><Mail className="icon" size={18} /> info@swaranbharattrust.org</p>
             </div>
             <div className="social-links">
-              <a href="#" aria-label="Facebook">📘</a>
-              <a href="#" aria-label="Twitter">🐦</a>
-              <a href="#" aria-label="LinkedIn">💼</a>
-              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
+              <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
+              <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
+              <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
             </div>
           </div>
         </div>
