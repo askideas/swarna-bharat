@@ -53,7 +53,8 @@ const Header = () => {
                     {item.label}
                   </Link>
                 </li>
-              ))}\n            </ul>
+              ))}
+            </ul>
           </nav>
 
           <button

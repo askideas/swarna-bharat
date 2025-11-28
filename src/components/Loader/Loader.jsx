@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import './Loader.css'
-import logoVideo from '../assets/logo.mp4'
+import logoVideo from '../../assets/logo.mp4'
 
 const Loader = () => {
   const videoRef = useRef(null)
