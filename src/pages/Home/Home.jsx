@@ -341,7 +341,7 @@ const Home = () => {
               <a href="/about" className="btn btn-primary">Know More</a>
             </div>
             
-            <div className="about-video slide-in-right">
+            <div className="about-video slide-in-left">
               <div className="video-player">
                 <video 
                   controls 
