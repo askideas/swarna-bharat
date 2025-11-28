@@ -16,11 +16,15 @@
   box-shadow: var(--shadow-medium);
 }
 
+.header-video-container {
+    width: 200px;
+}
+
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
   position: relative;
 }
 

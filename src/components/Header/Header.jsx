@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
+import logoVideo from '../../assets/logo.mp4'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -34,10 +35,18 @@ const Header = () => {
         <div className="header-content">
           <div className="logo">
             <Link to="/" className="logo-link">
-              <div className="logo-text">
-                <h1>Swarna Bharat Trust</h1>
-                <span className="logo-tagline">Excellence in Service</span>
-              </div>
+              <div className="header-video-container">
+                <video
+                    className="logo-video"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                >
+                    <source src={logoVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                </div>
             </Link>
           </div>
 
