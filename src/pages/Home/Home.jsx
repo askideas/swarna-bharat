@@ -207,6 +207,79 @@ const Home = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="about-section">
+        <div className="container">
+          <div className="about-content-grid">
+            <div className="about-text fade-in">
+              <div className="section-header-left">
+                <h2>About Swarna Bharat Trust</h2>
+                <p className="section-subtitle">Building Communities, Transforming Lives</p>
+              </div>
+              <div className="about-description">
+                <p>
+                  Founded with a vision to create meaningful change in our community, Swarna Bharat Trust 
+                  has been a beacon of hope and excellence for over a decade. Our journey began with a 
+                  simple yet powerful belief: that through dedicated service and unwavering commitment, 
+                  we can build a better tomorrow for all.
+                </p>
+                <p>
+                  From humble beginnings, we have grown into a trusted organization that touches countless 
+                  lives through our various initiatives and programs. We focus on education, healthcare, 
+                  skill development, and community welfare, creating comprehensive solutions that address 
+                  the real needs of our society.
+                </p>
+                <p>
+                  Our success is measured not in numbers alone, but in the positive impact we create, 
+                  the trust we build within our community, and the sustainable change we bring to people's lives. 
+                  Every project we undertake is driven by our core values of excellence, integrity, and compassion.
+                </p>
+              </div>
+              {/* <div className="about-stats">
+                <div className="stat-item">
+                  <span className="stat-number">15+</span>
+                  <span className="stat-text">Years of Service</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-number">10K+</span>
+                  <span className="stat-text">Lives Impacted</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-number">9</span>
+                  <span className="stat-text">Major Initiatives</span>
+                </div>
+              </div> */}
+              <a href="/about" className="btn btn-primary">Know More</a>
+            </div>
+            
+            <div className="about-video fade-in">
+              <div className="video-player">
+                <video 
+                  controls 
+                  poster="/api/placeholder/600/400"
+                  className="trust-video"
+                >
+                  <source src="/path-to-your-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="video-overlay">
+                  <div className="play-button">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                      <circle cx="30" cy="30" r="30" fill="rgba(255,255,255,0.9)"/>
+                      <path d="M25 20L40 30L25 40V20Z" fill="var(--primary-color)"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="video-caption">
+                <h4>Our Journey of Impact</h4>
+                <p>Discover how Swarna Bharat Trust has been transforming communities through dedicated service and innovative solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="features">
         <div className="container">
