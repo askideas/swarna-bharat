@@ -1,6 +1,8 @@
+import './Activities.css'
+
 const Activities = () => {
   return (
-    <div className="activities" style={{ paddingTop: '80px', minHeight: '80vh' }}>
+    <div className="activities">
       <section className="page-hero">
         <div className="container">
           <div className="page-hero-content fade-in">

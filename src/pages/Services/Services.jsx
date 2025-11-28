@@ -1,6 +1,8 @@
+import './Services.css'
+
 const Services = () => {
   return (
-    <div className="services" style={{ paddingTop: '80px', minHeight: '80vh' }}>
+    <div className="services">
       <section className="page-hero">
         <div className="container">
           <div className="page-hero-content fade-in">

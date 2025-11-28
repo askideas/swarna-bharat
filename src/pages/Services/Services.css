@@ -1,4 +1,18 @@
 /* Services Page Styles */
 .services {
-  /* Styles will be added here */
+  padding-top: 122px; /* Desktop header height */
+  min-height: 80vh;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services {
+    padding-top: 100px; /* Tablet header height */
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding-top: 89px; /* Mobile header height */
+  }
 }

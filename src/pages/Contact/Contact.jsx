@@ -1,8 +1,9 @@
 import { Mail, Phone, MapPin } from 'lucide-react'
+import './Contact.css'
 
 const Contact = () => {
   return (
-    <div className="contact" style={{ paddingTop: '80px', minHeight: '80vh' }}>
+    <div className="contact">
       <section className="page-hero">
         <div className="container">
           <div className="page-hero-content fade-in">

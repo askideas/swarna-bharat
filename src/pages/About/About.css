@@ -1,6 +1,6 @@
 /* About Page Styles */
 .about {
-  padding-top: 80px;
+  padding-top: 122px; /* Desktop header height */
 }
 
 .about-content {
@@ -146,7 +146,17 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .about {
+    padding-top: 100px; /* Tablet header height */
+  }
+}
+
 @media (max-width: 768px) {
+  .about {
+    padding-top: 89px; /* Mobile header height */
+  }
+
   .content-grid,
   .mv-grid {
     grid-template-columns: 1fr;
