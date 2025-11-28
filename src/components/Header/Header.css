@@ -147,6 +147,10 @@
     display: flex;
   }
 
+  .header-video-container {
+        width: 100px;
+    }
+
   .nav {
     position: absolute;
     top: 100%;
