@@ -1,46 +1,114 @@
+import { useRef, useEffect } from 'react'
 import './Home.css'
-import { Star, Handshake, Lightbulb, Target } from 'lucide-react'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules'
+import { Star, Handshake, Lightbulb, Target, ChevronLeft, ChevronRight } from 'lucide-react'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
+import 'swiper/css/effect-fade'
 
 const Home = () => {
+  const swiperRef = useRef(null)
+
+  const slides = [
+    {
+      id: 1,
+      image: 'https://ik.imagekit.io/dlekfhyrb/SB%20Images/hero-1.jpg',
+      title: 'Welcome to Swarna Bharat Trust',
+      subtitle: 'Building a Brighter Future Through Excellence and Service',
+      description: 'We are dedicated to serving our community with integrity, innovation, and an unwavering commitment to excellence.',
+      primaryBtn: 'Learn More',
+      secondaryBtn: 'Get in Touch'
+    },
+    {
+      id: 2,
+      image: 'https://ik.imagekit.io/dlekfhyrb/SB%20Images/hero-2.jpg',
+      title: 'Empowering Communities Together',
+      subtitle: 'Creating Lasting Impact Through Dedicated Service',
+      description: 'Our mission is to create positive change and build lasting relationships based on trust and mutual respect.',
+      primaryBtn: 'Our Services',
+      secondaryBtn: 'Join Us'
+    },
+    {
+      id: 3,
+      image: 'https://ik.imagekit.io/dlekfhyrb/SB%20Images/hero-2.jpg',
+      title: 'Excellence in Every Endeavor',
+      subtitle: 'Trust, Innovation, and Community at Our Core',
+      description: 'With years of experience and unwavering dedication, we continue to serve and make a meaningful difference.',
+      primaryBtn: 'Our Story',
+      secondaryBtn: 'Contact Us'
+    }
+  ]
+
   return (
     <div className="home">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-text slide-in-left">
-              <h1>Welcome to Swarna Bharat Trust</h1>
-              <p className="hero-subtitle">
-                Building a Brighter Future Through Excellence and Service
-              </p>
-              <p className="hero-description">
-                We are dedicated to serving our community with integrity, innovation, and an unwavering 
-                commitment to excellence. Our mission is to create positive change and build lasting 
-                relationships based on trust and mutual respect.
-              </p>
-              <div className="hero-buttons">
-                <a href="/about" className="btn btn-primary">Learn More</a>
-                <a href="/contact" className="btn btn-secondary">Get in Touch</a>
+      {/* Hero Slider Section */}
+      <section className="hero-slider">
+        <Swiper
+          ref={swiperRef}
+          modules={[Navigation, Pagination, Autoplay, EffectFade]}
+          spaceBetween={0}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }}
+          pagination={{
+            el: '.custom-pagination',
+            clickable: true,
+            bulletClass: 'pagination-dot',
+            bulletActiveClass: 'active'
+          }}
+          navigation={{
+            prevEl: '.slider-btn-prev',
+            nextEl: '.slider-btn-next'
+          }}
+          effect="slide"
+          speed={800}
+          className="hero-swiper"
+        >
+          {slides.map((slide) => (
+            <SwiperSlide key={slide.id}>
+              <div className="slide">
+                <div className="slide-image">
+                  <img src={slide.image} alt={slide.title} loading="lazy" />
+                  <div className="slide-overlay"></div>
+                </div>
+                <div className="slide-content">
+                  <div className="container">
+                    <div className="slide-text">
+                      <h1 className="slide-title">{slide.title}</h1>
+                      <p className="slide-subtitle">{slide.subtitle}</p>
+                      <p className="slide-description">{slide.description}</p>
+                      <div className="slide-buttons">
+                        <a href="/about" className="btn btn-primary">{slide.primaryBtn}</a>
+                        <a href="/contact" className="btn btn-secondary">{slide.secondaryBtn}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="hero-image slide-in-right">
-              <div className="hero-visual">
-                <div className="floating-card">
-                  <h3>Our Mission</h3>
-                  <p>Excellence in Service</p>
-                </div>
-                <div className="floating-card">
-                  <h3>Our Vision</h3>
-                  <p>Trust in Action</p>
-                </div>
-                <div className="floating-card">
-                  <h3>Our Values</h3>
-                  <p>Community First</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Custom Navigation Buttons */}
+        <button className="slider-btn slider-btn-prev">
+          <ChevronLeft size={24} />
+        </button>
+        <button className="slider-btn slider-btn-next">
+          <ChevronRight size={24} />
+        </button>
+
+        {/* Custom Pagination */}
+        <div className="custom-pagination"></div>
       </section>
 
       {/* Features Section */}
