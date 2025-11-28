@@ -3,7 +3,11 @@ import './Home.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules'
-import { Star, Handshake, Lightbulb, Target, ChevronLeft, ChevronRight } from 'lucide-react'
+import { 
+  Star, Handshake, Lightbulb, Target, ChevronLeft, ChevronRight,
+  Building2, GraduationCap, Code, Users, Settings, Eye, 
+  Stethoscope, Heart, Home as HomeIcon
+} from 'lucide-react'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -109,6 +113,98 @@ const Home = () => {
 
         {/* Custom Pagination */}
         <div className="custom-pagination"></div>
+      </section>
+
+      {/* Services Section */}
+      <section className="services-section">
+        <div className="container">
+          <div className="section-header fade-in">
+            <h2>Our Services</h2>
+            <p>Comprehensive solutions designed to create positive impact and drive meaningful change</p>
+          </div>
+          <div className="services-grid">
+            <div className="service-card fade-in">
+              <div className="service-icon">
+                <Building2 size={48} />
+              </div>
+              <h3>Swarna Bharathi Vidyamandir</h3>
+              <p>Providing quality education and nurturing young minds for a brighter future through innovative learning approaches.</p>
+              <button className="service-btn">Read More</button>
+            </div>
+            
+            <div className="service-card fade-in">
+              <div className="service-icon">
+                <GraduationCap size={48} />
+              </div>
+              <h3>Residential Bridge School</h3>
+              <p>Bridging educational gaps through residential programs that provide comprehensive learning support and development.</p>
+              <button className="service-btn">Read More</button>
+            </div>
+            
+            <div className="service-card fade-in">
+              <div className="service-icon">
+                <Code size={48} />
+              </div>
+              <h3>Swarna Bharat Institute of Rural Entrepreneurship Development (SIRED)</h3>
+              <p>Empowering rural communities through entrepreneurship development and innovative business solutions.</p>
+              <button className="service-btn">Read More</button>
+            </div>
+            
+            <div className="service-card fade-in">
+              <div className="service-icon">
+                <Users size={48} />
+              </div>
+              <h3>SOMA - Skill Development & Technical Training Institute</h3>
+              <p>Building technical expertise and professional skills to enhance employment opportunities and career growth.</p>
+              <button className="service-btn">Read More</button>
+            </div>
+            
+            <div className="service-card fade-in">
+              <div className="service-icon">
+                <HomeIcon size={48} />
+              </div>
+              <h3>Elders Home</h3>
+              <p>Providing compassionate care and a comfortable living environment for elderly community members.</p>
+              <button className="service-btn">Read More</button>
+            </div>
+            
+            <div className="service-card fade-in">
+              <div className="service-icon">
+                <Settings size={48} />
+              </div>
+              <h3>Farmers Training Center</h3>
+              <p>Supporting agricultural development through modern farming techniques and sustainable practices training.</p>
+              <button className="service-btn">Read More</button>
+            </div>
+            
+            <div className="service-card fade-in">
+              <div className="service-icon">
+                <Eye size={48} />
+              </div>
+              <h3>LV Prasad Eye Institute</h3>
+              <p>Delivering world-class eye care services and promoting vision health in our community.</p>
+              <button className="service-btn">Read More</button>
+            </div>
+            
+            <div className="service-card fade-in">
+              <div className="service-icon">
+                <Stethoscope size={48} />
+              </div>
+              <h3>Veterinary Hospital</h3>
+              <p>Comprehensive veterinary care services ensuring the health and wellbeing of animals in our community.</p>
+              <button className="service-btn">Read More</button>
+            </div>
+            
+            <div className="service-card fade-in">
+              <div className="service-icon">
+                <Heart size={48} />
+              </div>
+              <h3>Rural Health Center & Dental Hospital</h3>
+              <p>Providing accessible healthcare and dental services to rural communities with modern medical facilities.</p>
+              <button className="service-btn">Read More</button>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Features Section */}

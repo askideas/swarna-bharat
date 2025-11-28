@@ -12,32 +12,15 @@ import './App.css'
 
 function App() {
   const [loading, setLoading] = useState(true)
-  const [loadingStartTime, setLoadingStartTime] = useState(Date.now())
 
   useEffect(() => {
-    // Ensure loader shows for at least 4 seconds
-    const minLoadTime = 2500 // 4 seconds
-    
-    const handleLoad = () => {
-      const elapsedTime = Date.now() - loadingStartTime
-      const remainingTime = Math.max(0, minLoadTime - elapsedTime)
-      
-      setTimeout(() => {
-        setLoading(false)
-      }, remainingTime)
-    }
+    // Simple timeout approach - show loader for 3 seconds
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 3000)
 
-    // Check if page is already loaded
-    if (document.readyState === 'complete') {
-      handleLoad()
-    } else {
-      window.addEventListener('load', handleLoad)
-    }
-
-    return () => {
-      window.removeEventListener('load', handleLoad)
-    }
-  }, [loadingStartTime])
+    return () => clearTimeout(timer)
+  }, [])
 
   if (loading) {
     return <Loader />
