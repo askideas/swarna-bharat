@@ -1,6 +1,18 @@
 /* Home Page Styles */
 .home {
   position: relative;
+  animation: pageLoad 1s ease-out;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Hero Slider Styles */
@@ -206,6 +218,22 @@
   animation: slideInUp 1s ease-out;
 }
 
+.hero-swiper .swiper-slide-active .slide-title {
+  animation: slideInUp 1s ease-out 0.2s both;
+}
+
+.hero-swiper .swiper-slide-active .slide-subtitle {
+  animation: slideInUp 1s ease-out 0.4s both;
+}
+
+.hero-swiper .swiper-slide-active .slide-description {
+  animation: slideInUp 1s ease-out 0.6s both;
+}
+
+.hero-swiper .swiper-slide-active .slide-buttons {
+  animation: slideInUp 1s ease-out 0.8s both;
+}
+
 /* Fix z-index issues */
 .hero-slider .slider-btn {
   z-index: 20;
@@ -225,6 +253,214 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: none;
+}
+
+.animate-on-scroll.animate-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.slide-in-left.animate-in {
+  animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.slide-in-right.animate-in {
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.zoom-in.animate-in {
+  animation: zoomIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Enhanced Hover Animations */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+.feature-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.feature-card:hover .feature-icon {
+  animation: pulse 1s ease-in-out infinite;
+  color: var(--accent-color);
+}
+
+/* Stats Counter Animation */
+.counter {
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(44, 82, 130, 0.15);
+}
+
+.stat-card:hover .stat-number {
+  color: var(--accent-color);
+  animation: pulse 0.8s ease-in-out;
+}
+
+/* Button Animations */
+.service-btn, .btn {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-btn::before, .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.service-btn:hover::before, .btn:hover::before {
+  left: 100%;
+}
+
+.service-btn:hover, .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Player Animations */
+.video-player {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.video-player:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.play-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.play-button:hover {
+  transform: scale(1.2);
+  animation: pulse 1s ease-in-out infinite;
 }
 
 .floating-card {

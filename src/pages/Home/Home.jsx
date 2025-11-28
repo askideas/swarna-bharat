@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import './Home.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -18,6 +18,95 @@ import 'swiper/css/effect-fade'
 
 const Home = () => {
   const swiperRef = useRef(null)
+  const [animatedElements, setAnimatedElements] = useState(new Set())
+
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in')
+            setAnimatedElements(prev => new Set([...prev, entry.target]))
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    )
+
+    const animatedSelectors = [
+      '.services-section .section-header',
+      '.service-card',
+      '.about-section .about-text',
+      '.about-section .about-video',
+      '.features .section-header',
+      '.feature-card',
+      '.stats .stat-card',
+      '.cta .cta-content'
+    ]
+
+    const observeElements = () => {
+      animatedSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+          el.classList.add('animate-on-scroll')
+          observer.observe(el)
+        })
+      })
+    }
+
+    // Delay observation to ensure DOM is ready
+    const timer = setTimeout(observeElements, 100)
+
+    return () => {
+      clearTimeout(timer)
+      observer.disconnect()
+    }
+  }, [])
+
+  // Counter animation for statistics
+  useEffect(() => {
+    const animateCounter = (element, target, suffix = '') => {
+      const duration = 2000
+      const start = 0
+      const increment = target / (duration / 16)
+      let current = start
+
+      const timer = setInterval(() => {
+        current += increment
+        if (current >= target) {
+          current = target
+          clearInterval(timer)
+        }
+        
+        let displayValue = Math.floor(current)
+        if (target >= 1000) {
+          displayValue = displayValue >= 1000 ? Math.floor(displayValue / 1000) + 'K' : displayValue
+        }
+        element.textContent = displayValue + suffix
+      }, 16)
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('.counter')
+          counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'))
+            const suffix = target >= 15 && target < 100 ? '+' : target >= 100 ? '+' : ''
+            animateCounter(counter, target, suffix)
+          })
+          statsObserver.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.5 })
+
+    const statsSection = document.querySelector('.stats')
+    if (statsSection) {
+      statsObserver.observe(statsSection)
+    }
+
+    return () => statsObserver.disconnect()
+  }, [])
 
   const slides = [
     {
@@ -123,7 +212,7 @@ const Home = () => {
             <p>Comprehensive solutions designed to create positive impact and drive meaningful change</p>
           </div>
           <div className="services-grid">
-            <div className="service-card fade-in">
+            <div className="service-card" style={{animationDelay: '0.1s'}}>
               <div className="service-icon">
                 <Building2 size={48} />
               </div>
@@ -132,7 +221,7 @@ const Home = () => {
               <button className="service-btn">Read More</button>
             </div>
             
-            <div className="service-card fade-in">
+            <div className="service-card" style={{animationDelay: '0.2s'}}>
               <div className="service-icon">
                 <GraduationCap size={48} />
               </div>
@@ -141,7 +230,7 @@ const Home = () => {
               <button className="service-btn">Read More</button>
             </div>
             
-            <div className="service-card fade-in">
+            <div className="service-card" style={{animationDelay: '0.3s'}}>
               <div className="service-icon">
                 <Code size={48} />
               </div>
@@ -150,7 +239,7 @@ const Home = () => {
               <button className="service-btn">Read More</button>
             </div>
             
-            <div className="service-card fade-in">
+            <div className="service-card" style={{animationDelay: '0.4s'}}>
               <div className="service-icon">
                 <Users size={48} />
               </div>
@@ -159,7 +248,7 @@ const Home = () => {
               <button className="service-btn">Read More</button>
             </div>
             
-            <div className="service-card fade-in">
+            <div className="service-card" style={{animationDelay: '0.5s'}}>
               <div className="service-icon">
                 <HomeIcon size={48} />
               </div>
@@ -168,7 +257,7 @@ const Home = () => {
               <button className="service-btn">Read More</button>
             </div>
             
-            <div className="service-card fade-in">
+            <div className="service-card" style={{animationDelay: '0.6s'}}>
               <div className="service-icon">
                 <Settings size={48} />
               </div>
@@ -177,7 +266,7 @@ const Home = () => {
               <button className="service-btn">Read More</button>
             </div>
             
-            <div className="service-card fade-in">
+            <div className="service-card" style={{animationDelay: '0.7s'}}>
               <div className="service-icon">
                 <Eye size={48} />
               </div>
@@ -186,7 +275,7 @@ const Home = () => {
               <button className="service-btn">Read More</button>
             </div>
             
-            <div className="service-card fade-in">
+            <div className="service-card" style={{animationDelay: '0.8s'}}>
               <div className="service-icon">
                 <Stethoscope size={48} />
               </div>
@@ -195,7 +284,7 @@ const Home = () => {
               <button className="service-btn">Read More</button>
             </div>
             
-            <div className="service-card fade-in">
+            <div className="service-card" style={{animationDelay: '0.9s'}}>
               <div className="service-icon">
                 <Heart size={48} />
               </div>
@@ -211,7 +300,7 @@ const Home = () => {
       <section className="about-section">
         <div className="container">
           <div className="about-content-grid">
-            <div className="about-text fade-in">
+            <div className="about-text slide-in-left">
               <div className="section-header-left">
                 <h2>About Swarna Bharat Trust</h2>
                 <p className="section-subtitle">Building Communities, Transforming Lives</p>
@@ -252,7 +341,7 @@ const Home = () => {
               <a href="/about" className="btn btn-primary">Know More</a>
             </div>
             
-            <div className="about-video fade-in">
+            <div className="about-video slide-in-right">
               <div className="video-player">
                 <video 
                   controls 
@@ -288,22 +377,22 @@ const Home = () => {
             <p>Discover what makes us the trusted choice for excellence and service</p>
           </div>
           <div className="features-grid">
-            <div className="feature-card fade-in">
+            <div className="feature-card" style={{animationDelay: '0.1s'}}>
               <div className="feature-icon"><Star size={48} /></div>
               <h3>Excellence</h3>
               <p>We maintain the highest standards in everything we do, ensuring quality and reliability in all our services.</p>
             </div>
-            <div className="feature-card fade-in">
+            <div className="feature-card" style={{animationDelay: '0.2s'}}>
               <div className="feature-icon"><Handshake size={48} /></div>
               <h3>Trust</h3>
               <p>Built on a foundation of trust and transparency, we foster long-lasting relationships with our community.</p>
             </div>
-            <div className="feature-card fade-in">
+            <div className="feature-card" style={{animationDelay: '0.3s'}}>
               <div className="feature-icon"><Lightbulb size={48} /></div>
               <h3>Innovation</h3>
               <p>We embrace innovative solutions and modern approaches to address contemporary challenges effectively.</p>
             </div>
-            <div className="feature-card fade-in">
+            <div className="feature-card" style={{animationDelay: '0.4s'}}>
               <div className="feature-icon"><Target size={48} /></div>
               <h3>Impact</h3>
               <p>Our initiatives create meaningful, lasting impact in the communities we serve across various sectors.</p>
@@ -316,20 +405,20 @@ const Home = () => {
       <section className="stats">
         <div className="container">
           <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-number">500+</div>
+            <div className="stat-card" style={{animationDelay: '0.1s'}}>
+              <div className="stat-number counter" data-target="500">0</div>
               <div className="stat-label">Projects Completed</div>
             </div>
-            <div className="stat-card">
-              <div className="stat-number">10K+</div>
+            <div className="stat-card" style={{animationDelay: '0.2s'}}>
+              <div className="stat-number counter" data-target="10000">0</div>
               <div className="stat-label">Lives Impacted</div>
             </div>
-            <div className="stat-card">
-              <div className="stat-number">50+</div>
+            <div className="stat-card" style={{animationDelay: '0.3s'}}>
+              <div className="stat-number counter" data-target="50">0</div>
               <div className="stat-label">Community Partners</div>
             </div>
-            <div className="stat-card">
-              <div className="stat-number">15+</div>
+            <div className="stat-card" style={{animationDelay: '0.4s'}}>
+              <div className="stat-number counter" data-target="15">0</div>
               <div className="stat-label">Years of Excellence</div>
             </div>
           </div>
@@ -339,7 +428,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="cta">
         <div className="container">
-          <div className="cta-content fade-in">
+          <div className="cta-content zoom-in">
             <h2>Ready to Make a Difference?</h2>
             <p>Join us in our mission to create positive change and build a better tomorrow for our community.</p>
             <div className="cta-buttons">
