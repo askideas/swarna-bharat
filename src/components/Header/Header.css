@@ -170,8 +170,8 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 320px;
-  max-width: 85%;
+  width: 85%;
+  max-width: 400px;
   height: 100vh;
   background: white;
   color: var(--text-primary);
@@ -340,7 +340,7 @@
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
-    z-index: 1000;
+    z-index: 998;
   }
 
   .header-video-container {
@@ -362,7 +362,7 @@
 
 @media (max-width: 400px) {
   .mobile-menu-modal {
-    width: 100%;
+    width: 78%;
     max-width: 100%;
   }
   

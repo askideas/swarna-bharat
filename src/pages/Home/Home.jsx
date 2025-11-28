@@ -178,11 +178,9 @@ const Home = () => {
                   <div className="container">
                     <div className="slide-text">
                       <h1 className="slide-title">{slide.title}</h1>
-                      <p className="slide-subtitle">{slide.subtitle}</p>
-                      <p className="slide-description">{slide.description}</p>
                       <div className="slide-buttons">
-                        <a href="/about" className="btn btn-primary">{slide.primaryBtn}</a>
-                        <a href="/contact" className="btn btn-secondary">{slide.secondaryBtn}</a>
+                        <a href="/about" className="btn btn-primary">Learn More</a>
+                        <a href="/contact" className="btn btn-secondary">Get in Touch</a>
                       </div>
                     </div>
                   </div>

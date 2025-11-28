@@ -72,11 +72,22 @@ const Header = () => {
             <div className="mobile-menu-overlay" onClick={() => setIsMenuOpen(false)} />
           )}
 
+          {/* Hamburger Menu Button */}
+          <button
+            className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
           {/* Mobile Menu Modal */}
           <div className={`mobile-menu-modal ${isMenuOpen ? 'open' : ''}`}>
             <div className="mobile-menu-header">
               <div className="menu-logo">
-                <div className="header-video-container-menu">
+                {/* <div className="header-video-container-menu">
                   <video
                       className="logo-video"
                       autoPlay
@@ -87,7 +98,7 @@ const Header = () => {
                       <source src={logoVideo} type="video/mp4" />
                       Your browser does not support the video tag.
                   </video>
-                </div>
+                </div> */}
                 <h3>Swarna Bharat <span className="trust-text">Trust</span></h3>
               </div>
               <button 
@@ -123,16 +134,6 @@ const Header = () => {
               <p className="footer-tagline">Building Communities, Transforming Lives</p>
             </div>
           </div>
-
-          <button
-            className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
       </div>
     </header>
