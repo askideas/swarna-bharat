@@ -36,7 +36,7 @@ const Home = () => {
     },
     {
       id: 3,
-      image: 'https://ik.imagekit.io/dlekfhyrb/SB%20Images/hero-2.jpg',
+      image: 'https://ik.imagekit.io/dlekfhyrb/SB%20Images/hero-3.jpg',
       title: 'Excellence in Every Endeavor',
       subtitle: 'Trust, Innovation, and Community at Our Core',
       description: 'With years of experience and unwavering dedication, we continue to serve and make a meaningful difference.',
