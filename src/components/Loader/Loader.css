@@ -119,8 +119,8 @@
 
 @media (max-width: 480px) {
   .video-container {
-    width: 120px;
-    height: 120px;
+    width: 90%;
+    height: auto;
   }
   
   .loading-text h2 {
