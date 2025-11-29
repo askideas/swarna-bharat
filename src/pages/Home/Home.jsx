@@ -141,65 +141,52 @@ const Home = () => {
   return (
     <div className="home">
       {/* Hero Slider Section */}
-      <section className="hero-slider">
-        <Swiper
-          ref={swiperRef}
-          modules={[Navigation, Pagination, Autoplay, EffectFade]}
-          spaceBetween={0}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
-          }}
-          pagination={{
-            el: '.custom-pagination',
-            clickable: true,
-            bulletClass: 'pagination-dot',
-            bulletActiveClass: 'active'
-          }}
-          navigation={{
-            prevEl: '.slider-btn-prev',
-            nextEl: '.slider-btn-next'
-          }}
-          effect="slide"
-          speed={800}
-          className="hero-swiper"
-        >
-          {slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <div className="slide">
-                <div className="slide-image">
-                  <img src={slide.image} alt={slide.title} loading="lazy" />
-                  <div className="slide-overlay"></div>
+      <section className="hero-slider-container">
+        <div className="hero-slider-wrapper">
+          <Swiper
+            ref={swiperRef}
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={0}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
+            }}
+            pagination={{
+              el: '.custom-pagination',
+              clickable: true,
+              bulletClass: 'pagination-dot',
+              bulletActiveClass: 'active'
+            }}
+            navigation={{
+              prevEl: '.slider-btn-prev',
+              nextEl: '.slider-btn-next'
+            }}
+            speed={800}
+            className="hero-swiper"
+          >
+            {slides.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                <div className="slide">
+                  <img src={slide.image} alt={`Slide ${slide.id}`} className="slide-image-only" />
                 </div>
-                <div className="slide-content">
-                  <div className="container">
-                    <div className="slide-text">
-                      <h1 className="slide-title">{slide.title}</h1>
-                      <div className="slide-buttons">
-                        <a href="/about" className="btn btn-primary">Learn More</a>
-                        <a href="/contact" className="btn btn-secondary">Get in Touch</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-        {/* Custom Navigation Buttons */}
-        <button className="slider-btn slider-btn-prev">
-          <ChevronLeft size={24} />
-        </button>
-        <button className="slider-btn slider-btn-next">
-          <ChevronRight size={24} />
-        </button>
+          {/* Custom Navigation Buttons */}
+          <button className="slider-btn slider-btn-prev" aria-label="Previous slide">
+            <ChevronLeft size={24} />
+          </button>
+          <button className="slider-btn slider-btn-next" aria-label="Next slide">
+            <ChevronRight size={24} />
+          </button>
 
-        {/* Custom Pagination */}
-        <div className="custom-pagination"></div>
+          {/* Custom Pagination */}
+          <div className="custom-pagination"></div>
+        </div>
       </section>
 
       {/* Services Section */}
