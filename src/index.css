@@ -9,3 +9,11 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+section {
+  background: url('./assets/bg-image.png') !important;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
