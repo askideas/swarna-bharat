@@ -27,7 +27,7 @@
   margin: 0 auto;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); */
 }
 
 .hero-swiper {
@@ -90,40 +90,57 @@
   right: 1.5rem;
 }
 
-/* Custom Pagination */
+/* Custom Pagination - Circular dots with active bar */
 .custom-pagination {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.75rem;
-  z-index: 10;
-  width: 100% !important;
+  position: relative;
   display: flex !important;
   justify-content: center;
   align-items: center;
-  left: 50% !important;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  z-index: 10;
 }
 
 .pagination-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(44, 82, 130, 0.3);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.pagination-dot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
 }
 
 .pagination-dot:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(44, 82, 130, 0.5);
   transform: scale(1.2);
 }
 
 .pagination-dot.active {
-  background: white !important;
-  transform: scale(1.3);
+  width: 50px;
+  height: 6px;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.pagination-dot.active::before {
+  width: 100%;
+  border-radius: 3px;
 }
 
 /* Hide default Swiper pagination */
@@ -428,7 +445,7 @@
 
 /* Services Section */
 .services-section {
-  padding: 6rem 0;
+  padding: 2rem 0;
   background-color: var(--background-primary);
 }
 
@@ -797,7 +814,7 @@
 @media (max-width: 1024px) {
   /* Tablet styles */
   .services-section {
-    padding: 5rem 0;
+    padding: 2rem 0;
   }
 
   .services-grid {
@@ -843,7 +860,7 @@
   }
 
   .services-section {
-    padding: 4rem 0;
+    padding: 2rem 0;
   }
 
   .services-grid {
@@ -927,12 +944,18 @@
   }
 
   .custom-pagination {
-    bottom: 2rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 0;
   }
 
   .pagination-dot {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .pagination-dot.active {
+    width: 40px;
+    height: 5px;
   }
 
   .section-header h2 {
@@ -988,13 +1011,19 @@
   }
 
   .custom-pagination {
-    bottom: 1.5rem;
-    gap: 0.75rem;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    gap: 0.4rem;
   }
 
   .pagination-dot {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .pagination-dot.active {
+    width: 32px;
+    height: 4px;
   }
 
   .features {
@@ -1094,11 +1123,17 @@
   }
 
   .custom-pagination {
-    bottom: 1.25rem;
+    margin-top: 1.25rem;
+    padding: 0.625rem 0;
   }
 
   .pagination-dot {
     width: 9px;
     height: 9px;
+  }
+
+  .pagination-dot.active {
+    width: 36px;
+    height: 4.5px;
   }
 }
