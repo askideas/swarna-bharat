@@ -150,9 +150,9 @@ const Home = () => {
             slidesPerView={1}
             loop={true}
             autoplay={{
-              delay: 5000,
+              delay: 2500,
               disableOnInteraction: false,
-              pauseOnMouseEnter: true
+              pauseOnMouseEnter: false
             }}
             pagination={{
               el: '.custom-pagination',
