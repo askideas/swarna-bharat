@@ -192,90 +192,126 @@ const Home = () => {
       {/* Services Section */}
       <section className="services-section">
         <div className="container">
-          <div className="section-header fade-in">
-            <h2>Our Services</h2>
-            <p>Comprehensive solutions designed to create positive impact and drive meaningful change</p>
-          </div>
-          <div className="services-grid">
-            <div className="service-card" style={{animationDelay: '0.1s'}}>
-              <div className="service-icon">
-                <Building2 size={48} />
+          <div className="services-content">
+            {/* Left Panel */}
+            <div className="services-left-panel">
+              <div className="services-header">
+                <span className="services-label">OUR SERVICES</span>
+                <h2>Comprehensive Solutions for Community Development</h2>
+                <p>From education to healthcare, we offer a full range of services and initiatives tailored to help our community thrive and prosper.</p>
+                <button className="all-services-btn">All Services</button>
               </div>
-              <h3>Swarna Bharathi Vidyamandir</h3>
-              <p>Providing quality education and nurturing young minds for a brighter future through innovative learning approaches.</p>
-              <button className="service-btn">Read More</button>
             </div>
-            
-            <div className="service-card" style={{animationDelay: '0.2s'}}>
-              <div className="service-icon">
-                <GraduationCap size={48} />
+
+            {/* Right Grid */}
+            <div className="services-grid">
+              <div className="service-card" style={{animationDelay: '0.1s'}}>
+                <div className="service-number">01</div>
+                <div className="service-icon">
+                  <Building2 size={40} strokeWidth={1.5} />
+                </div>
+                <h3>Swarna Bharathi Vidyamandir</h3>
+                <p>Providing quality education and nurturing young minds for a brighter future through innovative learning approaches.</p>
+                <button className="service-arrow-btn" aria-label="Read more">
+                  <ChevronRight size={20} />
+                </button>
               </div>
-              <h3>Residential Bridge School</h3>
-              <p>Bridging educational gaps through residential programs that provide comprehensive learning support and development.</p>
-              <button className="service-btn">Read More</button>
-            </div>
-            
-            <div className="service-card" style={{animationDelay: '0.3s'}}>
-              <div className="service-icon">
-                <Code size={48} />
+              
+              <div className="service-card" style={{animationDelay: '0.2s'}}>
+                <div className="service-number">02</div>
+                <div className="service-icon">
+                  <GraduationCap size={40} strokeWidth={1.5} />
+                </div>
+                <h3>Residential Bridge School</h3>
+                <p>Bridging educational gaps through residential programs that provide comprehensive learning support and development.</p>
+                <button className="service-arrow-btn" aria-label="Read more">
+                  <ChevronRight size={20} />
+                </button>
               </div>
-              <h3>Swarna Bharat Institute of Rural Entrepreneurship Development (SIRED)</h3>
-              <p>Empowering rural communities through entrepreneurship development and innovative business solutions.</p>
-              <button className="service-btn">Read More</button>
-            </div>
-            
-            <div className="service-card" style={{animationDelay: '0.4s'}}>
-              <div className="service-icon">
-                <Users size={48} />
+              
+              <div className="service-card" style={{animationDelay: '0.3s'}}>
+                <div className="service-number">03</div>
+                <div className="service-icon">
+                  <Code size={40} strokeWidth={1.5} />
+                </div>
+                <h3>Swarna Bharat Institute of Rural Entrepreneurship Development (SIRED)</h3>
+                <p>Empowering rural communities through entrepreneurship development and innovative business solutions.</p>
+                <button className="service-arrow-btn" aria-label="Read more">
+                  <ChevronRight size={20} />
+                </button>
               </div>
-              <h3>SOMA - Skill Development & Technical Training Institute</h3>
-              <p>Building technical expertise and professional skills to enhance employment opportunities and career growth.</p>
-              <button className="service-btn">Read More</button>
-            </div>
-            
-            <div className="service-card" style={{animationDelay: '0.5s'}}>
-              <div className="service-icon">
-                <HomeIcon size={48} />
+              
+              <div className="service-card" style={{animationDelay: '0.4s'}}>
+                <div className="service-number">04</div>
+                <div className="service-icon">
+                  <Users size={40} strokeWidth={1.5} />
+                </div>
+                <h3>SOMA - Skill Development & Technical Training Institute</h3>
+                <p>Building technical expertise and professional skills to enhance employment opportunities and career growth.</p>
+                <button className="service-arrow-btn" aria-label="Read more">
+                  <ChevronRight size={20} />
+                </button>
               </div>
-              <h3>Elders Home</h3>
-              <p>Providing compassionate care and a comfortable living environment for elderly community members.</p>
-              <button className="service-btn">Read More</button>
-            </div>
-            
-            <div className="service-card" style={{animationDelay: '0.6s'}}>
-              <div className="service-icon">
-                <Settings size={48} />
+              
+              <div className="service-card" style={{animationDelay: '0.5s'}}>
+                <div className="service-number">05</div>
+                <div className="service-icon">
+                  <HomeIcon size={40} strokeWidth={1.5} />
+                </div>
+                <h3>Elders Home</h3>
+                <p>Providing compassionate care and a comfortable living environment for elderly community members.</p>
+                <button className="service-arrow-btn" aria-label="Read more">
+                  <ChevronRight size={20} />
+                </button>
               </div>
-              <h3>Farmers Training Center</h3>
-              <p>Supporting agricultural development through modern farming techniques and sustainable practices training.</p>
-              <button className="service-btn">Read More</button>
-            </div>
-            
-            <div className="service-card" style={{animationDelay: '0.7s'}}>
-              <div className="service-icon">
-                <Eye size={48} />
+              
+              <div className="service-card" style={{animationDelay: '0.6s'}}>
+                <div className="service-number">06</div>
+                <div className="service-icon">
+                  <Settings size={40} strokeWidth={1.5} />
+                </div>
+                <h3>Farmers Training Center</h3>
+                <p>Supporting agricultural development through modern farming techniques and sustainable practices training.</p>
+                <button className="service-arrow-btn" aria-label="Read more">
+                  <ChevronRight size={20} />
+                </button>
               </div>
-              <h3>LV Prasad Eye Institute</h3>
-              <p>Delivering world-class eye care services and promoting vision health in our community.</p>
-              <button className="service-btn">Read More</button>
-            </div>
-            
-            <div className="service-card" style={{animationDelay: '0.8s'}}>
-              <div className="service-icon">
-                <Stethoscope size={48} />
+              
+              <div className="service-card" style={{animationDelay: '0.7s'}}>
+                <div className="service-number">07</div>
+                <div className="service-icon">
+                  <Eye size={40} strokeWidth={1.5} />
+                </div>
+                <h3>LV Prasad Eye Institute</h3>
+                <p>Delivering world-class eye care services and promoting vision health in our community.</p>
+                <button className="service-arrow-btn" aria-label="Read more">
+                  <ChevronRight size={20} />
+                </button>
               </div>
-              <h3>Veterinary Hospital</h3>
-              <p>Comprehensive veterinary care services ensuring the health and wellbeing of animals in our community.</p>
-              <button className="service-btn">Read More</button>
-            </div>
-            
-            <div className="service-card" style={{animationDelay: '0.9s'}}>
-              <div className="service-icon">
-                <Heart size={48} />
+              
+              <div className="service-card" style={{animationDelay: '0.8s'}}>
+                <div className="service-number">08</div>
+                <div className="service-icon">
+                  <Stethoscope size={40} strokeWidth={1.5} />
+                </div>
+                <h3>Veterinary Hospital</h3>
+                <p>Comprehensive veterinary care services ensuring the health and wellbeing of animals in our community.</p>
+                <button className="service-arrow-btn" aria-label="Read more">
+                  <ChevronRight size={20} />
+                </button>
               </div>
-              <h3>Rural Health Center & Dental Hospital</h3>
-              <p>Providing accessible healthcare and dental services to rural communities with modern medical facilities.</p>
-              <button className="service-btn">Read More</button>
+              
+              <div className="service-card" style={{animationDelay: '0.9s'}}>
+                <div className="service-number">09</div>
+                <div className="service-icon">
+                  <Heart size={40} strokeWidth={1.5} />
+                </div>
+                <h3>Rural Health Center & Dental Hospital</h3>
+                <p>Providing accessible healthcare and dental services to rural communities with modern medical facilities.</p>
+                <button className="service-arrow-btn" aria-label="Read more">
+                  <ChevronRight size={20} />
+                </button>
+              </div>
             </div>
           </div>
         </div>
