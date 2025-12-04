@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Home, Info, Briefcase, Activity, Mail, X, Phone, MapPin, ChevronDown } from 'lucide-react'
 import './Header.css'
-import logoVideo from '../../assets/logo.mp4'
+import logoVideo from '../../assets/Logo-Clock-Wise.mp4'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
