@@ -8,6 +8,9 @@ import {
   Building2, GraduationCap, Code, Users, Settings, Eye, 
   Stethoscope, Heart, Home as HomeIcon, X
 } from 'lucide-react'
+import Img1 from '../../assets/Hero Slider/img1.jpg'
+import Img2 from '../../assets/Hero Slider/img2.jpg'
+import Img3 from '../../assets/Hero Slider/img3.jpg'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -113,7 +116,7 @@ const Home = () => {
   const slides = [
     {
       id: 1,
-      image: 'https://ik.imagekit.io/dlekfhyrb/SB%20Images/hero-1.jpg',
+      image: Img1,
       title: 'Welcome to Swarna Bharat Trust',
       subtitle: 'Building a Brighter Future Through Excellence and Service',
       description: 'We are dedicated to serving our community with integrity, innovation, and an unwavering commitment to excellence.',
@@ -122,7 +125,7 @@ const Home = () => {
     },
     {
       id: 2,
-      image: 'https://ik.imagekit.io/dlekfhyrb/SB%20Images/hero-2.jpg',
+      image: Img2,
       title: 'Empowering Communities Together',
       subtitle: 'Creating Lasting Impact Through Dedicated Service',
       description: 'Our mission is to create positive change and build lasting relationships based on trust and mutual respect.',
@@ -131,7 +134,7 @@ const Home = () => {
     },
     {
       id: 3,
-      image: 'https://ik.imagekit.io/dlekfhyrb/SB%20Images/hero-3.jpg',
+      image: Img3,
       title: 'Excellence in Every Endeavor',
       subtitle: 'Trust, Innovation, and Community at Our Core',
       description: 'With years of experience and unwavering dedication, we continue to serve and make a meaningful difference.',
