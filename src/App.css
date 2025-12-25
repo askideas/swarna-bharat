@@ -1,8 +1,8 @@
 :root {
   /* Professional Color Palette */
-  --primary-color: #2c5282; /* Deep Blue */
-  --secondary-color: #3182ce; /* Bright Blue */
-  --accent-color: #ed8936; /* Warm Orange */
+  --primary-color: #2c2c8d; /* Deep Blue */
+  --secondary-color: #fd5c1d; /* Orange */
+  --accent-color: #0f9c53; /* Green */
   --text-primary: #2d3748; /* Dark Gray */
   --text-secondary: #4a5568; /* Medium Gray */
   --text-light: #718096; /* Light Gray */
